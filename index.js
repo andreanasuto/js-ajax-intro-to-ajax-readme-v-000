@@ -12,9 +12,9 @@ function getRepositories() {
   req.send()
 }
 
-function showCommits(event, data) {
-  var commits = JSON.parse(this.responseText)
-  const commitsList = `<ul>${commits.map(c => '<li>' + c.name + '</li>').join('')}</ul>`
+function showCommits() {
+  const commits = JSON.parse(this.responseText)
+  const commitsList = `<ul>${commits.map(commit => '<li><strong>' + commit.author.login + '</strong> - ' + commit.commit.message + '</li>').join('')}</ul>`
   document.getElementById("commits").innerHTML = commitsList
 }
 
