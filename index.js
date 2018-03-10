@@ -14,8 +14,8 @@ function getRepositories() {
 
 function showRepositories(event, data) {
   var commits = JSON.parse(this.responseText)
-  const repoList = `<ul>${repos.map(r => '<li>' + r.name + '</li>').join('')}</ul>`
-  document.getElementById("commits").innerHTML = repoList
+  const commitsList = `<ul>${commits.map(c => '<li>' + c.name + '</li>').join('')}</ul>`
+  document.getElementById("commits").innerHTML = commitsList
 }
 
 function getRepositories() {
